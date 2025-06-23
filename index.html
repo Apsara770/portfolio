@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sandamini's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">Sandamini Weerasekara</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" aria-label="Toggle navigation menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Hello, I'm <span class="highlight">Sandamini</span>!</h1>
+        <p class="tagline">Aspiring QA Engineer & Web Developer | Building Quality into Every Line</p>
+        <button class="btn primary-btn" onclick="downloadCV()" aria-label="Download Sandamini's CV">Download CV <i class="fas fa-download"></i></button>
+        <div class="social-links">
+          <a href="https://github.com/Apsara770" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/sandamini-weerasekara-631521348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="section-padding">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="assets/images/my.jpg" alt="Sandamini Weerasekara's Photo" class="profile-photo">
+        <p>I am a passionate and detail-oriented aspiring QA Engineer and Web Developer based in Colombo, Sri Lanka. With a strong interest in both ensuring software quality and building robust web applications, I am constantly learning and honing my skills in both areas. My goal is to contribute to innovative projects, create seamless user experiences, and write clean, efficient code. I'm always eager to take on new challenges and collaborate on exciting ventures!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section-padding bg-light">
+    <div class="container">
+      <h2>My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3><i class="fas fa-code"></i> Programming Languages</h3>
+          <ul>
+            <li>JavaScript</li>
+            <li>PHP</li>
+            <li>C#</li>
+            <li>Java (Basic)</li>
+            <li>Python (Basic)</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-laptop-code"></i> Web Technologies</h3>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>React</li>
+            <li>MySQL</li>
+            <li>MongoDB</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-bug"></i> QA & Testing</h3>
+          <ul>
+            <li>Manual Testing</li>
+            <li>Test Case Design</li>
+            <li>Bug Reporting</li>
+            <li>Jira (Familiar)</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-tools"></i> Tools & Concepts</h3>
+          <ul>
+            <li>Git & GitHub</li>
+            <li>VS Code</li>
+            <li>DevTools</li>
+            <li>Problem Solving</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section-padding">
+    <div class="container">
+      <h2>My Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Waa Inn Restaurant <i class="fas fa-utensils"></i></h3>
+          <p>A comprehensive web application for a restaurant, featuring menu display, online ordering, and contact functionalities. Developed with HTML, CSS, and basic JavaScript.</p>
+          <div class="project-links">
+            <a href="https://github.com/Apsara770/waa-inn-restaurant" target="_blank" class="btn secondary-btn">View Code <i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="project-card">
+          <h3>VoteSmart: Online Voting System <i class="fas fa-vote-yea"></i></h3>
+          <p>Designed and built a secure, web-based election system. Implemented using PHP (Object-Oriented Programming) for backend logic, MySQL for database management, and CSS for a clean user interface.</p>
+          <div class="project-links">
+            <a href="https://github.com/Apsara770/online-voting-system" target="_blank" class="btn secondary-btn">View Code <i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="project-card">
+          <h3>My Next Project Idea <i class="fas fa-rocket"></i></h3>
+          <p>I am looking forward to building my experience using the Laravel framework.</p>
+          <div class="project-links">
+            <a href="#" target="_blank" class="btn secondary-btn">View Code <i class="fab fa-github"></i></a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section-padding bg-light">
+    <div class="container">
+      <h2>Get In Touch</h2>
+      
+      <form id="contact-form">
+        <p class="contact-intro">Have a question or a project in mind? Feel free to reach out!</p>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="John Doe" required aria-label="Your Name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="john.doe@example.com" required aria-label="Your Email" />
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" placeholder="I'd like to discuss a project..." rows="6" aria-label="Your Message"></textarea>
+        </div>
+        <button type="submit" class="btn primary-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+      </form>
+      <p class="contact-info">
+        You can also connect with me directly via email: <a href="mailto:sandaminiweerasekara9@gmail.com">sandaminiweerasekara9@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="current-year"></span> Sandamini Weerasekara. All rights reserved.</p>
+      <p>Made with <i class="fas fa-heart" style="color: #e74c3c;"></i> in Sri Lanka</p>
+    </div>
+  </footer>
+
+  <button id="scrollToTopBtn" aria-label="Scroll to top of page"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="script.js"></script>
+</body>
+</html>
