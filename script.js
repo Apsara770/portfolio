@@ -3,7 +3,7 @@ function downloadCV() {
   const cvUrl = 'Sandamini_CV1.pdf'; //  CV file is named 'Sandamini_CV.pdf' in the same directory!
   const a = document.createElement('a');
   a.href = cvUrl;
-  a.download = 'Sandamini_CV.pdf';
+  a.download = 'Sandamini_CV1.pdf';
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
