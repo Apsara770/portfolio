@@ -1,6 +1,6 @@
 // Function to handle CV download
 function downloadCV() {
-  const cvUrl = 'Sandamini_CV.pdf'; // IMPORTANT: Make sure your CV file is named 'Sandamini_CV.pdf' in the same directory!
+  const cvUrl = 'Sandamini_CV.pdf'; //  CV file is named 'Sandamini_CV.pdf' in the same directory!
   const a = document.createElement('a');
   a.href = cvUrl;
   a.download = 'Sandamini_CV.pdf';
@@ -168,7 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Form Submission Handling ---
   if (contactForm) {
     contactForm.addEventListener('submit', function(event) {
-      event.preventDefault();
+     contactForm.addEventListener('submit', ...
+
 
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
