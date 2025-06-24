@@ -165,31 +165,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Form Submission Handling ---
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(event) {
-     contactForm.addEventListener('submit', ...
-
-
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-
-      if (!name || !email || !message) {
-        alert('Please fill in all fields before sending your message.');
-        return;
-      }
-
-      // In a real application, you'd send this data to a backend server or a service like Formspree.
-      // For this static portfolio, we'll simulate success.
-      console.log('Form Submitted!');
-      console.log('Name:', name);
-      console.log('Email:', email);
-      console.log('Message:', message);
-
-      alert('Thank you for your message! Sandamini will get back to you soon.');
-
-      contactForm.reset(); // Clear the form
-    });
-  }
+ 
 });
