@@ -1,6 +1,6 @@
 // Function to handle CV download
 function downloadCV() {
-  const cvUrl = 'Sandamini_CV.pdf'; //  CV file is named 'Sandamini_CV.pdf' in the same directory!
+  const cvUrl = 'Sandamini_CV1.pdf'; //  CV file is named 'Sandamini_CV.pdf' in the same directory!
   const a = document.createElement('a');
   a.href = cvUrl;
   a.download = 'Sandamini_CV.pdf';
