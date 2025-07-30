@@ -78,8 +78,34 @@ img {
 /* Hero Section */
 .hero-section {
   text-align: center;
-  padding: 3rem 0;
-  background-color: #f9f9f9;
+  padding: 6rem 0; /* Increased padding for better visual spacing with background */
+  background-color: #f9f9f9; /* Fallback color */
+  position: relative; /* Needed for overlay positioning */
+  color: #fff; /* Changed text color to white for better contrast on dark background */
+
+  /* --- Background Image Styles --- */
+  background-image: url('https://source.unsplash.com/random/1600x900/?coding,abstract,tech'); /* Online image URL */
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the image */
+  background-attachment: fixed; /* Optional: Makes the background parallax-like */
+}
+
+/* Background Overlay for Hero Section */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay with 60% opacity */
+  z-index: 1; /* Place overlay above background image but below content */
+}
+
+/* Ensure hero section content is above the overlay */
+.hero-section > .container {
+  position: relative;
+  z-index: 2; /* Place content above the overlay */
 }
 
 .profile-img {
@@ -89,17 +115,19 @@ img {
   object-fit: cover;
   margin: 1rem auto;
   border: 4px solid #ffc107;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.5); /* Added subtle shadow for depth */
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem; /* Slightly increased font size for impact */
   margin-top: 1rem;
   word-wrap: break-word; /* Prevent long words from overflowing */
+  color: #fff; /* Ensure heading is white */
 }
 
 .tagline, .location {
-  font-size: 1.1rem;
-  color: #555;
+  font-size: 1.2rem; /* Slightly increased font size */
+  color: #eee; /* Lighter color for better readability on dark background */
   margin: 0.3rem 0;
 }
 
@@ -127,17 +155,19 @@ img {
 .secondary-btn {
   background-color: #333;
   color: #fff;
+  border: 1px solid #ffc107; /* Added border for secondary button on dark background */
 }
 
 .secondary-btn:hover {
   background-color: #555;
+  border-color: #fff; /* Change border on hover */
 }
 
 .social-links {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem; /* Increased margin for social links */
 }
 
 .social-links a img {
