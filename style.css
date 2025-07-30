@@ -6,112 +6,187 @@
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif; /* Added Arial as a fallback */
-  background-color: #fdfaf6;
-  color: #333;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; /* Modern sans-serif font */
+  background-color: #1a1a2e; /* Dark background */
+  color: #e0e0e0; /* Light grey text */
   line-height: 1.6;
-  scroll-behavior: smooth; /* Smooth scrolling for potential anchor links */
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility; /* Improves font rendering */
+  -webkit-font-smoothing: antialiased; /* Smoother fonts for WebKit browsers */
+}
+
+/* --- Global Variables (Optional but good practice for theming) --- */
+:root {
+  --primary-color: #0f4c75; /* Deep blue/teal accent */
+  --secondary-color: #3282b8; /* Lighter blue */
+  --text-color-light: #e0e0e0;
+  --text-color-dark: #1a1a2e;
+  --bg-dark: #1a1a2e;
+  --bg-medium: #272c43;
+  --bg-light: #30344d;
+  --shadow-light: rgba(0, 0, 0, 0.25);
+  --shadow-strong: rgba(0, 0, 0, 0.4);
 }
 
 /* --- Layout & Structure --- */
 .container {
   width: 90%;
-  max-width: 960px; /* Slightly reduced max-width for better readability */
+  max-width: 1050px; /* Slightly wider container */
   margin: auto;
-  padding: 2.5rem 0; /* Increased vertical padding for sections */
+  padding: 3rem 1.5rem; /* Increased padding and added horizontal */
 }
 
 section {
-  margin-bottom: 3.5rem; /* Increased margin between sections */
-  padding: 0 1rem; /* Added horizontal padding for sections */
+  margin-bottom: 4rem; /* More space between sections */
+  background-color: var(--bg-medium); /* Darker background for sections */
+  border-radius: 12px; /* Rounded corners for sections */
+  box-shadow: 0 8px 25px var(--shadow-strong); /* Deeper shadow */
+  padding: 2.5rem 3rem; /* Internal padding for sections */
 }
+
+/* Specific styling for header to override section style */
+header.container {
+  background-color: var(--primary-color); /* Header will have accent color */
+  border-radius: 0; /* No rounded corners for header */
+  box-shadow: none; /* No shadow for header */
+  padding: 0; /* Reset header container padding */
+  max-width: 100%; /* Header takes full width */
+  margin: 0;
+}
+
 
 /* --- Typography --- */
 h1, h2, h3 {
+  font-weight: 700; /* Bold headings */
+  color: var(--text-color-light); /* Light text on dark background */
   margin-bottom: 1rem;
-  font-weight: 600; /* Slightly bolder headings */
-  color: #222; /* Consistent heading color */
 }
 
 h1 {
-  font-size: 2.5rem; /* Larger hero heading */
+  font-size: 3.2rem; /* Larger hero heading */
   line-height: 1.2;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
 }
 
 h2 {
-  font-size: 2rem; /* Adjusted section heading size */
-  border-left: 6px solid #ffcb05; /* Thicker border for emphasis */
-  padding-left: 0.8rem;
-  margin-bottom: 1.5rem; /* More space below section headings */
+  font-size: 2.5rem; /* Section heading size */
+  text-align: center; /* Centered section titles */
+  margin-bottom: 2.5rem; /* More space below section titles */
+  position: relative;
+  padding-bottom: 0.5rem;
+  color: var(--secondary-color); /* Lighter accent color for titles */
+}
+
+h2::after { /* Underline effect for H2 */
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
 }
 
 h3 {
-  font-size: 1.4rem; /* Adjusted sub-heading size */
-  color: #444;
+  font-size: 1.6rem; /* Sub-heading size */
+  color: var(--secondary-color);
 }
 
 p {
-  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-color-light);
 }
 
 /* --- Header Section --- */
 header {
-  background: #ffcb05;
-  color: #222;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); /* Gradient background */
+  color: #fff; /* White text for header */
   text-align: center;
-  padding: 4rem 0 3rem; /* More generous padding */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+  padding: 5rem 0 4rem; /* Generous padding */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+  position: relative; /* For potential background elements */
+  overflow: hidden; /* Hide overflow from any patterns */
+}
+
+header::before { /* Subtle background pattern */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at top left, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+header .container {
+    position: relative;
+    z-index: 1; /* Ensure content is above background pattern */
 }
 
 header h3 {
-  color: #222; /* Ensure header h3 is dark */
-  font-weight: 500;
+  color: #a8d7ff; /* Lighter blue for profession */
+  font-weight: 400; /* Lighter font for profession */
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  font-size: 1.3rem;
 }
 
 header p {
-  font-size: 1.1rem;
-  color: #333;
+  font-size: 1.15rem;
+  color: #c9e0f3; /* Lighter blue for location */
+  margin-bottom: 1.5rem;
 }
 
 .profile-img {
-  width: 180px; /* Slightly larger image */
-  height: 180px;
+  width: 200px; /* Larger image */
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid #fff; /* Thicker white border */
-  box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Stronger shadow */
-  margin-bottom: 1.5rem; /* More space below image */
+  border: 6px solid #fff; /* Thicker white border */
+  box-shadow: 0 0 25px rgba(0,0,0,0.5); /* Prominent shadow */
+  margin-bottom: 2rem; /* More space below image */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.profile-img:hover {
+  transform: scale(1.05) rotate(2deg); /* Subtle zoom and rotate on hover */
 }
 
 /* --- Buttons --- */
 .btn {
   display: inline-block;
-  margin-top: 1.5rem; /* More space above button */
-  padding: 0.85rem 2rem; /* Larger padding for better clickability */
-  background-color: #222;
-  color: #fff;
+  margin-top: 2rem;
+  padding: 1rem 2.5rem; /* Larger padding */
+  background: var(--bg-light); /* Use a darker background color for button */
+  color: var(--secondary-color); /* Use secondary color for text */
   text-decoration: none;
-  border-radius: 8px; /* Slightly less rounded corners for a modern look */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform for hover */
-  font-weight: 600; /* Bolder button text */
-  letter-spacing: 0.5px;
+  border-radius: 50px; /* Pill-shaped button */
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  border: 2px solid var(--secondary-color); /* Border matches text color */
+  box-shadow: 0 5px 15px var(--shadow-light);
 }
 
 .btn:hover {
-  background-color: #444;
-  transform: translateY(-2px); /* Subtle lift on hover */
+  background: var(--secondary-color); /* Fill with secondary color on hover */
+  color: var(--bg-dark); /* Dark text on hover */
+  transform: translateY(-3px); /* Lift effect */
+  box-shadow: 0 8px 20px var(--shadow-strong);
 }
 
 /* --- About Section --- */
 .about p {
+  text-align: left; /* Keep text left-aligned in dark theme */
+  max-width: 900px;
+  margin: 0 auto;
   font-size: 1.1rem;
-  line-height: 1.8;
-  max-width: 800px; /* Constrain text width for readability */
-  margin-left: auto;
-  margin-right: auto;
-  text-align: justify; /* Justify text for a clean block */
 }
 
 /* --- Skills Section --- */
@@ -119,169 +194,195 @@ header p {
   list-style: none;
   padding-left: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted minmax for better flow */
-  gap: 1.2rem; /* Slightly increased gap */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Slightly adjusted minmax */
+  gap: 1.5rem; /* Increased gap */
 }
 
 .skills li {
-  background: #fff;
-  padding: 1.2rem 1.5rem; /* More padding */
-  border-left: 6px solid #ffcb05; /* Thicker border */
+  background: var(--bg-light); /* Lighter background for skill cards */
+  padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Stronger shadow */
+  box-shadow: 0 4px 15px var(--shadow-light);
   font-weight: 500;
-  color: #333;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: var(--text-color-light);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  text-align: center; /* Center skill text */
+  border-left: 5px solid var(--primary-color); /* Accent border */
 }
 
 .skills li:hover {
-  transform: translateY(-3px); /* Lift on hover */
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12); /* Enhanced shadow on hover */
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 8px 20px var(--shadow-strong);
+  background-color: var(--bg-medium); /* Slightly darker on hover */
 }
 
 /* --- Projects Section --- */
+.projects {
+  display: grid; /* Use grid for projects */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem; /* Gap between project cards */
+  padding: 0 1.5rem; /* Padding to align with container text */
+}
+
 .project {
-  background: #fff;
-  padding: 1.5rem; /* More padding */
-  margin-bottom: 2rem; /* Increased margin between projects */
-  border-radius: 12px; /* Slightly more rounded corners */
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1); /* Stronger shadow */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px var(--shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 5px solid var(--primary-color); /* Accent border */
 }
 
 .project:hover {
-  transform: translateY(-5px); /* More noticeable lift on hover */
-  box-shadow: 0 8px 22px rgba(0,0,0,0.15); /* Enhanced shadow on hover */
+  transform: translateY(-8px); /* More pronounced lift */
+  box-shadow: 0 10px 30px var(--shadow-strong);
 }
 
 .project h3 {
-  margin-bottom: 0.5rem; /* Adjusted spacing */
-  font-size: 1.5rem;
-  color: #1a1a1a; /* Darker heading */
+  margin-bottom: 0.7rem;
+  font-size: 1.8rem;
+  color: var(--secondary-color);
 }
 
 .project p:first-of-type { /* Technologies line */
   font-style: italic;
-  color: #555;
-  margin-bottom: 0.7rem;
+  color: #b8c7e0; /* Lighter text for technologies */
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
 }
 
 .project p:last-of-type { /* Description */
-  color: #444;
+  color: #c0c0c0;
 }
 
 /* --- Contact Form --- */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Space between form elements */
+  max-width: 600px; /* Constrain form width */
+  margin: 0 auto; /* Center the form */
+}
+
 form input,
 form textarea {
   width: 100%;
-  padding: 1.1rem; /* More padding for input fields */
-  margin: 0.7rem 0 1.2rem; /* Adjusted margins */
-  border: 1px solid #ddd; /* Lighter border */
-  border-radius: 8px; /* Consistent border-radius */
+  padding: 1.2rem;
+  border: 1px solid var(--primary-color); /* Border with accent color */
+  border-radius: 8px;
   font-size: 1.05rem;
-  background: #fff;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Subtle inner shadow */
+  background: var(--bg-dark); /* Dark input background */
+  color: var(--text-color-light); /* Light text in inputs */
+  box-shadow: inset 0 1px 5px rgba(0,0,0,0.2);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #888; /* Lighter placeholder text */
 }
 
 form input:focus,
 form textarea:focus {
-  border-color: #ffcb05; /* Highlight border on focus */
-  box-shadow: 0 0 0 3px rgba(255, 203, 5, 0.2); /* Subtle glow on focus */
-  outline: none; /* Remove default outline */
+  border-color: var(--secondary-color); /* Highlight border on focus */
+  box-shadow: 0 0 0 4px rgba(50, 130, 184, 0.3); /* Accent glow on focus */
+  outline: none;
+  background-color: var(--bg-medium); /* Slightly lighter background on focus */
 }
 
 form textarea {
   resize: vertical;
-  height: 150px; /* Taller textarea */
+  min-height: 180px; /* Taller textarea */
 }
 
 form .btn {
-  width: auto; /* Reset width for the button */
-  display: block; /* Make button full width of form */
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2rem;
+  width: auto;
+  align-self: flex-end; /* Align button to the right */
+  margin-top: 1.5rem;
+  margin-bottom: 0; /* Remove bottom margin */
 }
 
 #status {
   margin-top: 1.5rem;
   text-align: center;
   font-weight: bold;
-  font-size: 1.1rem;
-  color: green; /* Keep success message green */
+  font-size: 1.15rem;
+  color: #4CAF50; /* Green for success */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 /* --- Footer --- */
 footer {
   text-align: center;
-  padding: 1.8rem; /* More padding */
-  background-color: #e9e9e9; /* Slightly darker footer background */
+  padding: 2rem;
+  background-color: #111122; /* Even darker footer */
   font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #e0e0e0; /* Subtle top border */
+  color: #999;
+  border-top: 1px solid #2a2a3e; /* Subtle top border */
+  margin-top: 4rem; /* More space before footer */
 }
 
 /* --- Responsive Adjustments --- */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
+  .profile-img {
+    width: 180px;
+    height: 180px;
+  }
+  section {
+    padding: 2rem 2.5rem;
+  }
+  .projects {
+    grid-template-columns: 1fr; /* Stack projects on smaller screens */
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
   h1 {
     font-size: 2.2rem;
   }
-
   h2 {
     font-size: 1.8rem;
+    margin-bottom: 2rem;
   }
-
+  h2::after {
+    width: 60px;
+    height: 3px;
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
   .profile-img {
     width: 150px;
     height: 150px;
   }
-
   .btn {
+    padding: 0.8rem 2rem;
     font-size: 0.9rem;
-    padding: 0.7rem 1.5rem;
   }
-
-  .skills ul {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-    padding-left: 0.5rem;
-  }
-
-  header {
-    padding: 3rem 0 2rem;
-  }
-
-  .profile-img {
-    width: 120px;
-    height: 120px;
-  }
-
   .container {
-    padding: 1.5rem 0;
+    padding: 2rem 1rem;
   }
-
   section {
-    margin-bottom: 2.5rem;
-    padding: 0 0.5rem;
+    padding: 1.5rem 1.5rem;
   }
-
+  .skills ul {
+    grid-template-columns: 1fr; /* Stack skills on very small screens */
+  }
   .project {
-    padding: 1.2rem;
-    margin-bottom: 1.5rem;
+    padding: 1.5rem;
   }
-
   form input,
   form textarea {
-    padding: 0.9rem;
+    padding: 1rem;
+  }
+  form .btn {
+    align-self: center; /* Center button on small screens */
   }
 }
