@@ -6,10 +6,10 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif; /* A clean, modern sans-serif font */
-  background-color: #F8F8F8; /* Light gray/off-white background */
-  color: #333333; /* Soft black for main text */
-  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif; /* A bold and modern font */
+  background-color: #1A1A1D; /* Deep almost-black background */
+  color: #E0E0E0; /* Light gray for main text */
+  line-height: 1.7;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -17,101 +17,111 @@ body {
 
 /* --- Global Color Variables --- */
 :root {
-  --primary-purple: #7B1FA2; /* A strong, deep purple */
-  --light-purple: #B39DDB; /* A lighter, softer purple for accents */
-  --black-text: #222222; /* Darker black for headings */
-  --white-bg: #FFFFFF;
-  --light-gray-bg: #F8F8F8;
-  --dark-gray-elements: #4A4A4A;
-  --shadow-light: rgba(0, 0, 0, 0.08);
-  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --primary-purple: #7B1FA2; /* Strong, deep purple */
+  --light-purple: #C2A5D5; /* Lighter, almost pastel purple for contrast */
+  --dark-bg: #1A1A1D; /* Deep black/gray */
+  --medium-dark-bg: #2C2C30; /* Slightly lighter dark for cards */
+  --white-elements: #FFFFFF;
+  --light-text: #E0E0E0;
+  --shadow-dark: rgba(0, 0, 0, 0.4);
+  --shadow-light: rgba(0, 0, 0, 0.2);
 }
 
 /* --- Layout & Structure --- */
 .container {
   width: 90%;
-  max-width: 1000px; /* Optimal width for readability */
+  max-width: 1100px;
   margin: auto;
-  padding: 3.5rem 1.5rem; /* Generous vertical and horizontal padding */
+  padding: 4rem 1.5rem;
 }
 
 section {
-  margin-bottom: 4rem; /* More space between sections */
-  background-color: var(--white-bg); /* White background for all content sections */
-  border-radius: 12px; /* Nicely rounded corners */
-  box-shadow: 0 8px 25px var(--shadow-medium); /* Prominent shadow for depth */
-  padding: 3rem; /* Internal padding for sections */
-  border-left: 6px solid var(--primary-purple); /* Signature purple left border */
+  margin-bottom: 5rem; /* Ample space between sections */
+  background-color: var(--medium-dark-bg); /* Darker background for sections */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--shadow-dark); /* Deeper, more noticeable shadow */
+  padding: 3.5rem;
+  border-right: 5px solid var(--primary-purple); /* Right-aligned accent border */
 }
 
 /* --- Typography --- */
 h1, h2, h3 {
-  font-weight: 700; /* Bold and impactful */
-  color: var(--black-text); /* Dark black for strong headings */
-  margin-bottom: 1.2rem;
+  font-weight: 800; /* Extra bold headings */
+  color: var(--light-text);
+  margin-bottom: 1.5rem;
 }
 
 h1 {
-  font-size: 3.8rem; /* Large and dominant */
+  font-size: 4.2rem;
   line-height: 1.1;
-  color: var(--white-bg); /* White in the header */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  color: var(--white-elements);
+  text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
-  font-size: 2.8rem; /* Significant section headings */
+  font-size: 3rem;
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.5rem;
   position: relative;
-  color: var(--primary-purple); /* Purple for section titles */
-  padding-bottom: 0.8rem;
+  color: var(--primary-purple);
+  padding-bottom: 1rem;
 }
 
-h2::after { /* Underline effect for H2 */
+h2::after {
   content: '';
   position: absolute;
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 120px; /* Wider underline */
-  height: 4px;
-  background-color: var(--primary-purple); /* Purple underline */
-  border-radius: 2px;
+  width: 100px;
+  height: 5px;
+  background-color: var(--primary-purple);
+  border-radius: 3px;
 }
 
 h3 {
-  font-size: 1.8rem;
-  color: var(--black-text); /* Dark black for sub-headings */
-  margin-bottom: 0.8rem;
+  font-size: 2rem;
+  color: var(--light-text);
+  margin-bottom: 1rem;
 }
 
 p {
-  font-size: 1.05rem;
-  color: var(--dark-gray-elements); /* Slightly softer text color */
+  font-size: 1.1rem;
+  color: var(--light-text);
 }
 
 /* --- Header Section --- */
 header {
-  background-color: var(--primary-purple); /* Solid primary purple background */
-  color: var(--white-bg); /* White text for header */
+  background-color: var(--dark-bg); /* Deep black header background */
+  color: var(--white-elements);
   text-align: center;
-  padding: 5rem 0 4rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); /* Strong shadow */
+  padding: 6rem 0 5rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
   position: relative;
   overflow: hidden;
 }
 
-header::before { /* Subtle pattern/texture */
+header::before, header::after { /* Abstract background elements */
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(circle at top left, rgba(255,255,255,0.08) 1px, transparent 1px);
-  background-size: 25px 25px;
-  opacity: 0.6;
+  background-color: rgba(123, 31, 162, 0.2); /* Semi-transparent purple shapes */
+  border-radius: 50%;
+  filter: blur(100px);
   z-index: 0;
+}
+
+header::before {
+  width: 350px;
+  height: 350px;
+  top: -100px;
+  left: -100px;
+}
+
+header::after {
+  width: 300px;
+  height: 300px;
+  bottom: -80px;
+  right: -80px;
 }
 
 header .container {
@@ -120,65 +130,63 @@ header .container {
 }
 
 header h3 {
-  color: var(--light-purple); /* Lighter purple for profession */
-  font-weight: 400;
-  font-size: 1.5rem;
-  margin-top: 0.8rem;
-  margin-bottom: 0.7rem;
+  color: var(--light-purple);
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 header p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--light-purple);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .profile-img {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   border-radius: 50%;
-  border: 6px solid var(--white-bg); /* White border */
-  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  border: 6px solid var(--primary-purple); /* Purple border for image */
+  box-shadow: 0 0 28px rgba(0,0,0,0.5);
   margin-bottom: 2.5rem;
-  transition: transform 0.3s ease-in-out, border-color 0.3s ease;
+  transition: transform 0.4s ease-in-out;
 }
 
 .profile-img:hover {
-  transform: scale(1.05); /* Gentle zoom */
-  border-color: var(--light-purple); /* Border subtly changes color */
+  transform: scale(1.08) rotate(3deg);
 }
 
 /* --- Buttons --- */
 .btn {
   display: inline-block;
-  margin-top: 2rem;
-  padding: 1.1rem 2.5rem;
-  background-color: var(--black-text); /* Black button background */
-  color: var(--white-bg); /* White text */
+  margin-top: 2.5rem;
+  padding: 1.2rem 2.8rem;
+  background-color: var(--primary-purple); /* Purple button */
+  color: var(--white-elements);
   text-decoration: none;
-  border-radius: 8px; /* Slightly rounded for a modern edge */
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  box-shadow: 0 6px 15px var(--shadow-medium);
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  box-shadow: 0 8px 20px var(--shadow-dark);
   transition: all 0.3s ease;
-  border: 2px solid transparent; /* Transparent border for initial state */
+  border: 2px solid transparent;
 }
 
 .btn:hover {
-  background-color: var(--primary-purple); /* Purple background on hover */
-  color: var(--white-bg);
-  transform: translateY(-3px); /* Lift effect */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  border-color: var(--white-bg); /* White border on hover */
+  background-color: var(--white-elements); /* White background on hover */
+  color: var(--dark-bg); /* Dark text on hover */
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  border-color: var(--primary-purple);
 }
 
 /* --- About Section --- */
 .about p {
-  text-align: left; /* Keep text left-aligned in content sections */
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 
 /* --- Skills Section --- */
@@ -186,222 +194,159 @@ header p {
   list-style: none;
   padding-left: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.8rem;
 }
 
 .skills li {
-  background: var(--light-gray-bg); /* Light gray background for skill cards */
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px var(--shadow-light);
-  font-weight: 500;
-  color: var(--black-text);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  background: var(--dark-bg); /* Dark background for skill cards */
+  padding: 1.6rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px var(--shadow-light);
+  font-weight: 600;
+  color: var(--light-text);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-  border-bottom: 4px solid var(--light-purple); /* Lighter purple accent */
+  border-bottom: 4px solid var(--light-purple);
 }
 
 .skills li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px var(--shadow-medium);
-  background-color: var(--white-bg); /* White background on hover */
-  border-color: var(--primary-purple); /* Primary purple border on hover */
+  transform: translateY(-6px);
+  box-shadow: 0 9px 20px var(--shadow-dark);
+  background-color: var(--medium-dark-bg);
+  border-color: var(--primary-purple);
 }
 
 /* --- Projects Section --- */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 0 1rem; /* Padding to align with section content */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding: 0 1rem;
 }
 
 .project {
-  background: var(--light-gray-bg); /* Light gray background for project cards */
-  padding: 2rem;
+  background: var(--dark-bg); /* Dark background for project cards */
+  padding: 2.2rem;
   border-radius: 10px;
-  box-shadow: 0 6px 18px var(--shadow-light);
+  box-shadow: 0 7px 20px var(--shadow-light);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  border-top: 4px solid var(--light-gray-bg); /* Subtle initial border */
+  border-left: 4px solid var(--dark-bg); /* Subtle initial border */
 }
 
 .project:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 25px var(--shadow-medium);
-  border-color: var(--primary-purple); /* Primary purple border on hover */
+  transform: translateY(-10px);
+  box-shadow: 0 14px 30px var(--shadow-dark);
+  border-color: var(--primary-purple);
 }
 
 .project h3 {
-  margin-bottom: 0.7rem;
-  font-size: 1.8rem;
-  color: var(--black-text);
+  margin-bottom: 0.8rem;
+  font-size: 1.9rem;
+  color: var(--light-text);
 }
 
-.project p:first-of-type { /* Technologies line */
+.project p:first-of-type {
   font-style: italic;
-  color: var(--dark-gray-elements);
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
+  color: var(--light-purple);
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
 }
 
-.project p:last-of-type { /* Description */
-  color: var(--dark-gray-elements);
+.project p:last-of-type {
+  color: var(--light-text);
 }
 
 /* --- Contact Form --- */
 .contact form {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
-  max-width: 600px;
+  gap: 1.5rem;
+  max-width: 700px;
   margin: 0 auto;
 }
 
 form input,
 form textarea {
   width: 100%;
-  padding: 1.2rem;
-  border: 1px solid #DDDDDD; /* Light gray border */
+  padding: 1.3rem;
+  border: 1px solid var(--medium-dark-bg); /* Darker border */
   border-radius: 8px;
   font-size: 1.05rem;
-  background: var(--white-bg); /* White background for inputs */
-  color: var(--black-text);
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+  background: var(--dark-bg); /* Dark input background */
+  color: var(--light-text);
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.2);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 form input::placeholder,
 form textarea::placeholder {
-  color: #AAAAAA; /* Lighter placeholder */
+  color: #999999;
 }
 
 form input:focus,
 form textarea:focus {
   border-color: var(--primary-purple);
-  box-shadow: 0 0 0 4px rgba(123, 31, 162, 0.15); /* Purple glow */
+  box-shadow: 0 0 0 4px rgba(123, 31, 162, 0.2);
   outline: none;
 }
 
 form textarea {
   resize: vertical;
-  min-height: 150px;
+  min-height: 180px;
 }
 
 form .btn {
   width: auto;
-  align-self: center; /* Center the button */
-  margin-top: 1.8rem;
+  align-self: center;
+  margin-top: 2rem;
   margin-bottom: 0;
 }
 
 #status {
-  margin-top: 1.5rem;
+  margin-top: 1.8rem;
   text-align: center;
   font-weight: bold;
   font-size: 1.15rem;
-  color: #4CAF50; /* Green for success */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  color: #28A745; /* Success green */
 }
 
 /* --- Footer --- */
 footer {
   text-align: center;
-  padding: 2rem;
-  background-color: var(--black-text); /* Black footer background */
+  padding: 2.2rem;
+  background-color: var(--dark-bg);
   font-size: 0.95rem;
-  color: var(--white-bg);
-  border-top: 1px solid var(--primary-purple); /* Purple top border */
-  margin-top: 4rem;
+  color: var(--light-text);
+  border-top: 3px solid var(--primary-purple);
+  margin-top: 5rem;
 }
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 992px) {
-  h1 {
-    font-size: 3rem;
-  }
-  h2 {
-    font-size: 2.4rem;
-  }
-  .profile-img {
-    width: 180px;
-    height: 180px;
-  }
-  section {
-    padding: 2.5rem;
-  }
-  .projects {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
+  h1 { font-size: 3.5rem; }
+  h2 { font-size: 2.8rem; }
+  .profile-img { width: 180px; height: 180px; }
+  section { padding: 3rem; }
 }
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2.2rem;
-  }
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  h2::after {
-    width: 80px;
-  }
-  h3 {
-    font-size: 1.6rem;
-  }
-  .profile-img {
-    width: 150px;
-    height: 150px;
-  }
-  header {
-    padding: 4rem 0 3rem;
-  }
-  .btn {
-    padding: 1rem 2.2rem;
-    font-size: 0.95rem;
-  }
-  .container {
-    padding: 2rem 1rem;
-  }
-  section {
-    padding: 2rem 1.5rem;
-  }
-  .skills ul {
-    grid-template-columns: 1fr; /* Stack skills on smaller screens */
-  }
-  .project {
-    padding: 1.8rem;
-  }
-  form input,
-  form textarea {
-    padding: 1.1rem;
-  }
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2.2rem; }
+  h2::after { width: 80px; }
+  .profile-img { width: 150px; height: 150px; }
+  .btn { padding: 1.1rem 2.5rem; }
+  .container { padding: 3rem 1rem; }
+  section { padding: 2.5rem 1.5rem; }
+  .skills ul, .projects { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
-  h1 {
-    font-size: 1.8rem;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
-  h2::after {
-    width: 50px;
-  }
-  header {
-    padding: 3rem 0 2.5rem;
-  }
-  .profile-img {
-    width: 120px;
-    height: 120px;
-  }
-  section {
-    padding: 1.5rem;
-  }
-  .project {
-    padding: 1.5rem;
-  }
-  .skills li {
-    padding: 1.5rem;
-  }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+  h2::after { width: 60px; height: 4px; }
+  header { padding: 4rem 0 3.5rem; }
+  .profile-img { width: 120px; height: 120px; }
+  section { padding: 2rem 1rem; }
+  .project, .skills li { padding: 1.6rem; }
 }
