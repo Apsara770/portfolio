@@ -6,24 +6,23 @@
 }
 
 body {
-  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; /* Modern, clean font */
-  background-color: #f7f0fe; /* Very light purple/off-white background */
-  color: #333333; /* Dark gray for main text */
-  line-height: 1.7;
+  font-family: 'Inter', sans-serif; /* A clean, modern sans-serif font */
+  background-color: #F8F8F8; /* Light gray/off-white background */
+  color: #333333; /* Soft black for main text */
+  line-height: 1.6;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
-/* --- Global Variables --- */
+/* --- Global Color Variables --- */
 :root {
-  --primary-purple: #6a1b9a; /* Deep, rich purple */
-  --secondary-purple: #9c27b0; /* Brighter purple */
-  --accent-light: #e0f2f7; /* Light blue/cyan for subtle contrast */
-  --text-dark: #333333;
-  --text-light: #ffffff;
-  --bg-light: #f7f0fe;
-  --bg-medium: #ffffff;
+  --primary-purple: #7B1FA2; /* A strong, deep purple */
+  --light-purple: #B39DDB; /* A lighter, softer purple for accents */
+  --black-text: #222222; /* Darker black for headings */
+  --white-bg: #FFFFFF;
+  --light-gray-bg: #F8F8F8;
+  --dark-gray-elements: #4A4A4A;
   --shadow-light: rgba(0, 0, 0, 0.08);
   --shadow-medium: rgba(0, 0, 0, 0.15);
 }
@@ -31,165 +30,155 @@ body {
 /* --- Layout & Structure --- */
 .container {
   width: 90%;
-  max-width: 1100px; /* Slightly wider max-width */
+  max-width: 1000px; /* Optimal width for readability */
   margin: auto;
-  padding: 3rem 1.5rem; /* Consistent padding */
+  padding: 3.5rem 1.5rem; /* Generous vertical and horizontal padding */
 }
 
 section {
   margin-bottom: 4rem; /* More space between sections */
-  background-color: var(--bg-medium); /* White background for sections */
-  border-radius: 15px; /* More rounded corners for sections */
-  box-shadow: 0 10px 30px var(--shadow-medium); /* Stronger shadow for depth */
+  background-color: var(--white-bg); /* White background for all content sections */
+  border-radius: 12px; /* Nicely rounded corners */
+  box-shadow: 0 8px 25px var(--shadow-medium); /* Prominent shadow for depth */
   padding: 3rem; /* Internal padding for sections */
-  border-top: 5px solid var(--secondary-purple); /* Accent border on top */
+  border-left: 6px solid var(--primary-purple); /* Signature purple left border */
 }
 
 /* --- Typography --- */
 h1, h2, h3 {
-  font-weight: 700;
-  color: var(--primary-purple); /* Primary purple for headings */
-  margin-bottom: 1rem;
+  font-weight: 700; /* Bold and impactful */
+  color: var(--black-text); /* Dark black for strong headings */
+  margin-bottom: 1.2rem;
 }
 
 h1 {
-  font-size: 3.5rem; /* Larger, impactful heading */
-  line-height: 1.2;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 3.8rem; /* Large and dominant */
+  line-height: 1.1;
+  color: var(--white-bg); /* White in the header */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
-  font-size: 2.8rem; /* Prominent section heading */
+  font-size: 2.8rem; /* Significant section headings */
   text-align: center;
   margin-bottom: 2.5rem;
   position: relative;
-  color: var(--secondary-purple); /* Secondary purple for section titles */
-  padding-bottom: 0.8rem; /* Space for the underline */
+  color: var(--primary-purple); /* Purple for section titles */
+  padding-bottom: 0.8rem;
 }
 
-h2::after { /* Stylish underline for H2 */
+h2::after { /* Underline effect for H2 */
   content: '';
   position: absolute;
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 100px; /* Wider underline */
-  height: 6px; /* Thicker underline */
-  background: linear-gradient(to right, var(--primary-purple), var(--secondary-purple)); /* Gradient underline */
-  border-radius: 3px;
+  width: 120px; /* Wider underline */
+  height: 4px;
+  background-color: var(--primary-purple); /* Purple underline */
+  border-radius: 2px;
 }
 
 h3 {
   font-size: 1.8rem;
-  color: var(--primary-purple); /* Primary purple for sub-headings */
+  color: var(--black-text); /* Dark black for sub-headings */
   margin-bottom: 0.8rem;
 }
 
 p {
   font-size: 1.05rem;
-  color: var(--text-dark);
+  color: var(--dark-gray-elements); /* Slightly softer text color */
 }
 
 /* --- Header Section --- */
 header {
-  background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%); /* Gradient background */
-  color: var(--text-light); /* White text */
+  background-color: var(--primary-purple); /* Solid primary purple background */
+  color: var(--white-bg); /* White text for header */
   text-align: center;
-  padding: 6rem 0 5rem; /* More generous padding */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  padding: 5rem 0 4rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); /* Strong shadow */
   position: relative;
   overflow: hidden;
-  border-bottom-left-radius: 20px; /* Rounded bottom corners for header */
-  border-bottom-right-radius: 20px;
 }
 
-header::before, header::after { /* Abstract background shapes */
+header::before { /* Subtle pattern/texture */
   content: '';
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  opacity: 0.7;
-  filter: blur(80px); /* Soft blur effect */
-}
-
-header::before {
-  width: 300px;
-  height: 300px;
-  top: -50px;
-  left: -80px;
-}
-
-header::after {
-  width: 250px;
-  height: 250px;
-  bottom: -50px;
-  right: -60px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at top left, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 25px 25px;
+  opacity: 0.6;
+  z-index: 0;
 }
 
 header .container {
     position: relative;
-    z-index: 1; /* Ensure content is above background elements */
+    z-index: 1;
 }
 
 header h3 {
-  color: #f0f0f0; /* Slightly off-white for subtitle */
-  font-weight: 500;
-  font-size: 1.4rem;
+  color: var(--light-purple); /* Lighter purple for profession */
+  font-weight: 400;
+  font-size: 1.5rem;
   margin-top: 0.8rem;
   margin-bottom: 0.7rem;
 }
 
 header p {
   font-size: 1.2rem;
-  color: #e0e0e0;
+  color: var(--light-purple);
   margin-bottom: 2rem;
 }
 
 .profile-img {
-  width: 220px; /* Larger image */
-  height: 220px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
-  border: 7px solid var(--accent-light); /* Light accent border */
-  box-shadow: 0 0 30px rgba(0,0,0,0.4); /* Deep shadow */
+  border: 6px solid var(--white-bg); /* White border */
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
   margin-bottom: 2.5rem;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease;
 }
 
 .profile-img:hover {
-  transform: scale(1.08) rotate(-5deg); /* More dynamic hover */
+  transform: scale(1.05); /* Gentle zoom */
+  border-color: var(--light-purple); /* Border subtly changes color */
 }
 
 /* --- Buttons --- */
 .btn {
   display: inline-block;
-  margin-top: 2.5rem;
-  padding: 1.1rem 2.8rem; /* Larger padding */
-  background: var(--text-light); /* White background for button */
-  color: var(--primary-purple); /* Primary purple text */
+  margin-top: 2rem;
+  padding: 1.1rem 2.5rem;
+  background-color: var(--black-text); /* Black button background */
+  color: var(--white-bg); /* White text */
   text-decoration: none;
-  border-radius: 50px; /* Pill shape */
+  border-radius: 8px; /* Slightly rounded for a modern edge */
   font-weight: 600;
-  letter-spacing: 0.8px;
-  box-shadow: 0 8px 20px var(--shadow-medium);
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 15px var(--shadow-medium);
   transition: all 0.3s ease;
-  border: 2px solid var(--primary-purple); /* Border with primary purple */
+  border: 2px solid transparent; /* Transparent border for initial state */
 }
 
 .btn:hover {
-  background: var(--primary-purple); /* Fill with primary purple on hover */
-  color: var(--text-light); /* White text on hover */
-  transform: translateY(-4px); /* Lift effect */
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
-  border-color: var(--text-light); /* White border on hover */
+  background-color: var(--primary-purple); /* Purple background on hover */
+  color: var(--white-bg);
+  transform: translateY(-3px); /* Lift effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-color: var(--white-bg); /* White border on hover */
 }
 
 /* --- About Section --- */
 .about p {
-  text-align: center; /* Center the about text */
-  max-width: 900px;
+  text-align: left; /* Keep text left-aligned in content sections */
+  max-width: 800px;
   margin: 0 auto;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
 }
 
 /* --- Skills Section --- */
@@ -197,116 +186,112 @@ header p {
   list-style: none;
   padding-left: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.8rem; /* Increased gap */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
 }
 
 .skills li {
-  background: var(--bg-light); /* Lighter background for skill cards */
-  padding: 1.8rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px var(--shadow-light);
-  font-weight: 600;
-  color: var(--primary-purple); /* Primary purple text */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  background: var(--light-gray-bg); /* Light gray background for skill cards */
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow-light);
+  font-weight: 500;
+  color: var(--black-text);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
   text-align: center;
-  border-bottom: 4px solid var(--secondary-purple); /* Accent border on bottom */
+  border-bottom: 4px solid var(--light-purple); /* Lighter purple accent */
 }
 
 .skills li:hover {
-  transform: translateY(-7px); /* More pronounced lift */
-  box-shadow: 0 10px 25px var(--shadow-medium);
-  background-color: var(--accent-light); /* Light accent background on hover */
-  color: var(--text-dark); /* Dark text on hover for contrast */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px var(--shadow-medium);
+  background-color: var(--white-bg); /* White background on hover */
+  border-color: var(--primary-purple); /* Primary purple border on hover */
 }
 
 /* --- Projects Section --- */
-.projects-grid { /* Renamed to avoid conflict with .projects container */
+.projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem; /* Larger gap between project cards */
-  padding: 0 1rem; /* Adjust padding to match section content */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem; /* Padding to align with section content */
 }
 
 .project {
-  background: var(--bg-light);
-  padding: 2.2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px var(--shadow-light);
+  background: var(--light-gray-bg); /* Light gray background for project cards */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px var(--shadow-light);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  border: 2px solid var(--bg-light); /* Subtle border for initial state */
+  border-top: 4px solid var(--light-gray-bg); /* Subtle initial border */
 }
 
 .project:hover {
-  transform: translateY(-10px); /* Stronger lift */
-  box-shadow: 0 15px 35px var(--shadow-medium);
-  border-color: var(--secondary-purple); /* Border highlights on hover */
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px var(--shadow-medium);
+  border-color: var(--primary-purple); /* Primary purple border on hover */
 }
 
 .project h3 {
-  margin-bottom: 0.8rem;
-  font-size: 2rem;
-  color: var(--primary-purple);
+  margin-bottom: 0.7rem;
+  font-size: 1.8rem;
+  color: var(--black-text);
 }
 
 .project p:first-of-type { /* Technologies line */
   font-style: italic;
-  color: #7b1fa2; /* Slightly darker purple for tech text */
-  margin-bottom: 1.2rem;
-  font-size: 1rem;
+  color: var(--dark-gray-elements);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
 }
 
 .project p:last-of-type { /* Description */
-  color: var(--text-dark);
+  color: var(--dark-gray-elements);
 }
 
 /* --- Contact Form --- */
-.contact-form-container { /* Added container for form centering */
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.contact-form-container form {
+.contact form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 form input,
 form textarea {
   width: 100%;
-  padding: 1.3rem;
-  border: 1px solid #dcdcdc; /* Lighter border */
-  border-radius: 10px; /* Slightly more rounded */
-  font-size: 1.1rem;
-  background: var(--bg-light); /* Light purple background for inputs */
-  color: var(--text-dark);
-  box-shadow: inset 0 1px 5px rgba(0,0,0,0.05);
+  padding: 1.2rem;
+  border: 1px solid #DDDDDD; /* Light gray border */
+  border-radius: 8px;
+  font-size: 1.05rem;
+  background: var(--white-bg); /* White background for inputs */
+  color: var(--black-text);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 form input::placeholder,
 form textarea::placeholder {
-  color: #a0a0a0; /* More visible placeholder */
+  color: #AAAAAA; /* Lighter placeholder */
 }
 
 form input:focus,
 form textarea:focus {
-  border-color: var(--secondary-purple);
-  box-shadow: 0 0 0 4px rgba(156, 39, 176, 0.2); /* Purple glow */
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 4px rgba(123, 31, 162, 0.15); /* Purple glow */
   outline: none;
-  background-color: var(--bg-medium); /* White background on focus */
 }
 
 form textarea {
   resize: vertical;
-  min-height: 200px; /* Taller textarea */
+  min-height: 150px;
 }
 
 form .btn {
   width: auto;
   align-self: center; /* Center the button */
-  margin-top: 2rem;
+  margin-top: 1.8rem;
   margin-bottom: 0;
 }
 
@@ -315,25 +300,25 @@ form .btn {
   text-align: center;
   font-weight: bold;
   font-size: 1.15rem;
-  color: #4CAF50; /* Green for success messages */
+  color: #4CAF50; /* Green for success */
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* --- Footer --- */
 footer {
   text-align: center;
-  padding: 2.5rem;
-  background-color: #512da8; /* Darker purple for footer */
+  padding: 2rem;
+  background-color: var(--black-text); /* Black footer background */
   font-size: 0.95rem;
-  color: #e0e0e0;
-  border-top: 1px solid #7c4dff; /* Lighter purple border */
-  margin-top: 5rem; /* More space before footer */
+  color: var(--white-bg);
+  border-top: 1px solid var(--primary-purple); /* Purple top border */
+  margin-top: 4rem;
 }
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 992px) {
   h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
   }
   h2 {
     font-size: 2.4rem;
@@ -345,7 +330,7 @@ footer {
   section {
     padding: 2.5rem;
   }
-  .projects-grid {
+  .projects {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
@@ -360,7 +345,6 @@ footer {
   }
   h2::after {
     width: 80px;
-    height: 5px;
   }
   h3 {
     font-size: 1.6rem;
@@ -403,7 +387,6 @@ footer {
   }
   h2::after {
     width: 50px;
-    height: 4px;
   }
   header {
     padding: 3rem 0 2.5rem;
@@ -414,7 +397,6 @@ footer {
   }
   section {
     padding: 1.5rem;
-    border-radius: 10px;
   }
   .project {
     padding: 1.5rem;
