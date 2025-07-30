@@ -15,6 +15,7 @@ body {
 
 img {
   max-width: 100%;
+  height: auto; /* Ensure images scale proportionally */
   display: block;
 }
 
@@ -39,17 +40,22 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  padding: 0 5%; /* Add horizontal padding for smaller screens */
 }
 
 .nav-brand {
   font-size: 1.5rem;
   font-weight: bold;
+  padding: 0.5rem 0; /* Add padding for better touch target */
 }
 
 .nav-links {
   display: flex;
   gap: 1.5rem;
   list-style: none;
+  margin: 0; /* Reset default list margin */
+  padding: 0; /* Reset default list padding */
 }
 
 .nav-links li a {
@@ -57,6 +63,7 @@ img {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
+  padding: 0.5rem 0; /* Add padding for better touch target */
 }
 
 .nav-links li a:hover {
@@ -87,6 +94,7 @@ img {
 .hero-content h1 {
   font-size: 2.5rem;
   margin-top: 1rem;
+  word-wrap: break-word; /* Prevent long words from overflowing */
 }
 
 .tagline, .location {
@@ -156,7 +164,7 @@ img {
 /* Skills Section */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted min-width for smaller screens */
   gap: 1rem;
   list-style: none;
   padding: 0;
@@ -167,12 +175,13 @@ img {
   padding: 1rem;
   border-left: 5px solid #ffc107;
   font-weight: 500;
+  text-align: center; /* Center text for better appearance on small screens */
 }
 
 /* Projects Section */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted min-width for smaller screens */
   gap: 2rem;
 }
 
@@ -191,6 +200,7 @@ img {
 }
 
 .project-image {
+  width: 100%; /* Ensure image fills its container */
   border-radius: 5px;
   margin-bottom: 1rem;
   height: 160px;
@@ -214,6 +224,7 @@ img {
   gap: 1rem;
   max-width: 600px;
   margin: auto;
+  padding: 0 1rem; /* Add horizontal padding for smaller screens */
 }
 
 .contact-form input,
@@ -243,4 +254,72 @@ img {
   padding: 1.5rem 0;
   margin-top: 3rem;
   font-size: 0.9rem;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Small devices (e.g., phones, less than 768px) */
+@media (max-width: 767px) {
+  .nav-container {
+    flex-direction: column; /* Stack navbar items vertically */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack navigation links vertically */
+    width: 100%; /* Take full width */
+    text-align: center; /* Center align links */
+    margin-top: 1rem;
+    gap: 0.5rem; /* Reduce gap between links */
+  }
+
+  .nav-links li a {
+    padding: 0.75rem 0; /* Increase padding for better touch target */
+    display: block; /* Make links block-level for full width */
+  }
+
+  .hero-content h1 {
+    font-size: 2rem; /* Reduce font size for smaller screens */
+  }
+
+  .tagline, .location {
+    font-size: 1rem; /* Reduce font size */
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem; /* Adjust button padding */
+    font-size: 0.9rem; /* Adjust button font size */
+  }
+
+  .common-section h2 {
+    font-size: 1.8rem; /* Adjust section heading size */
+  }
+
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr; /* Single column layout for grids on small screens */
+  }
+
+  .project-image {
+    height: 200px; /* Adjust project image height for better display */
+  }
+}
+
+/* Medium devices (e.g., tablets, 768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav-container {
+    padding: 0 2%; /* Adjust padding for tablets */
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem; /* Slightly smaller font for tablets */
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjust min-width for skills grid */
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Adjust min-width for projects grid */
+  }
 }
