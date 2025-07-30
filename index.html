@@ -5,8 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sandamini | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/images/my.jpg" type="image/jpg">
 </head>
 <body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="nav-brand">Sandamini</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" aria-label="LinkedIn">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="social-icon" />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/YOUR-GITHUB" target="_blank" aria-label="GitHub">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="social-icon" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
   <header class="hero-section">
     <div class="container hero-content">
       <img src="assets/images/my.jpg" alt="Sandamini Weerasekara" class="profile-img" />
@@ -17,7 +43,9 @@
     </div>
   </header>
 
+  <!-- Main Content -->
   <main>
+    <!-- About Section -->
     <section id="about" class="about-section common-section">
       <div class="container">
         <h2>About Me</h2>
@@ -28,6 +56,7 @@
       </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills" class="skills-section common-section">
       <div class="container">
         <h2>Skills</h2>
@@ -40,6 +69,7 @@
       </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="projects-section common-section">
       <div class="container">
         <h2>Projects</h2>
@@ -63,6 +93,7 @@
       </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="contact-section common-section">
       <div class="container">
         <h2>Send a Message</h2>
@@ -77,13 +108,15 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <p>© 2025 Sandamini Weerasekara</p>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script src="script.js" type="module" ></script>
+  <script src="script.js" type="module"></script>
 </body>
 </html>
