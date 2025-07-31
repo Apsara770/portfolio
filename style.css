@@ -48,6 +48,7 @@ img {
 .nav-brand {
   font-size: 1.5rem;
   font-weight: bold;
+  color: #fff;
 }
 
 .nav-links {
@@ -68,28 +69,21 @@ img {
   color: #ffc107;
 }
 
-.social-icon {
-  width: 24px;
-  height: 24px;
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #ffc107;
+  cursor: pointer;
 }
 
 /* Hero Section */
 .hero-section {
   text-align: center;
   padding: 6rem 0;
-  background: linear-gradient(to bottom, #000000, #444444); /* dark gradient background */
+  background: linear-gradient(to bottom, #000000, #444444);
   color: #fff;
   position: relative;
-}
-
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
- 
-  z-index: 1;
 }
 
 .hero-section > .container {
@@ -275,22 +269,33 @@ img {
 
 /* --- Responsive Styles --- */
 @media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    align-items: flex-start;
+  .hamburger {
+    display: block;
   }
 
   .nav-links {
+    display: none;
     flex-direction: column;
     width: 100%;
     text-align: center;
+    gap: 1rem;
     margin-top: 1rem;
-    gap: 0.5rem;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 
   .nav-links li a {
     display: block;
     padding: 0.75rem 0;
+    color: #fff;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .hero-content h1 {
@@ -314,4 +319,10 @@ img {
   .project-image {
     height: 200px;
   }
+}
+
+/* Animation for mobile nav */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
