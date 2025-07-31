@@ -13,7 +13,14 @@
   <nav class="navbar">
     <div class="container nav-container">
       <div class="nav-brand">Sandamini</div>
-      <ul class="nav-links">
+
+      <!-- Hamburger Icon -->
+      <div class="hamburger" id="hamburger">
+        &#9776;
+      </div>
+
+      <!-- Nav Links -->
+      <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -30,6 +37,7 @@
       <p class="tagline">Trainee Software Engineer</p>
       <p class="location">Makandura, Sri Lanka</p>
 
+      <!-- Social Links -->
       <div class="social-links">
         <a href="https://www.linkedin.com/in/sandamini-weerasekara-631521348" target="_blank" aria-label="LinkedIn">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="social-icon" />
@@ -93,7 +101,7 @@
             <h3>Bookshop Inventory System</h3>
             <p class="project-tech">C#, SQL</p>
             <p class="project-description">Desktop inventory app with modular design and transaction tracking.</p>
-            <a href="https://github.com/Apsara770/" target="_blank" class="btn secondary-btn">View on GitHub</a>
+            <a href="https://github.com/Apsara770" target="_blank" class="btn secondary-btn">View on GitHub</a>
           </div>
         </div>
       </div>
@@ -123,6 +131,17 @@
 
   <!-- Scripts -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    // Hamburger toggle script
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    });
+  </script>
   <script src="script.js" type="module"></script>
 </body>
 </html>
