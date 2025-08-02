@@ -241,6 +241,35 @@ header {
   background-color: var(--secondary-color);
 }
 
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  background-color: #24292e; /* GitHub dark background */
+  color: #fff;
+  border: 2px solid #24292e;
+}
+
+.secondary-btn:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+  color: #fcd34d; /* Optional: add accent hover color */
+}
+
+.secondary-btn i {
+  margin-left: 8px;
+  font-size: 18px;
+}
+
 /* Footer */
 
 footer {
