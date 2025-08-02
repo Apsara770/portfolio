@@ -1,9 +1,4 @@
-/*
-  Sandamini Portfolio Styles
-  - Base styles for a clean, modern look.
-  - Responsive design for various screen sizes.
-  - Dark mode support for user preference.
-*/
+
 
 /* --- Importing Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
@@ -601,7 +596,7 @@ body.dark-mode footer {
   }
 
   .hero {
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
     padding-top: 100px;
     min-height: auto;
