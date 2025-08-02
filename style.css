@@ -351,6 +351,33 @@ body.dark-mode .cv-btn:hover {
   background-color: #4a8ac7;
 }
 
+/* --- About Section --- */
+.about {
+  padding: 80px 5%;
+  background-color: var(--card-bg-color);
+}
+
+body.dark-mode .about {
+  background-color: var(--dark-mode-card-bg);
+}
+
+.about-container {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-text .location {
+  font-style: italic;
+  font-weight: 300;
+  margin-top: -10px;
+}
+
 /* --- Skills Section --- */
 #skills {
   background-color: var(--card-bg-color);
