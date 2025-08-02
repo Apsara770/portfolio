@@ -1,5 +1,4 @@
 
-
 /* --- Importing Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
@@ -380,12 +379,12 @@ body.dark-mode .about {
 
 /* --- Skills Section --- */
 #skills {
-  background-color: var(--card-bg-color);
+  background-color: var(--bg-color);
   padding: 80px 5%;
 }
 
 body.dark-mode #skills {
-  background-color: var(--dark-mode-card-bg);
+  background-color: var(--dark-mode-bg);
 }
 
 .skills-list {
@@ -475,12 +474,12 @@ body.dark-mode .project-card {
 
 /* --- Contact Section --- */
 #contact {
-  background-color: var(--card-bg-color);
+  background-color: var(--bg-color);
   padding: 80px 5%;
 }
 
 body.dark-mode #contact {
-  background-color: var(--dark-mode-card-bg);
+  background-color: var(--dark-mode-bg);
 }
 
 .contact-form {
@@ -496,7 +495,7 @@ body.dark-mode #contact {
 }
 
 body.dark-mode .contact-form {
-  background-color: var(--dark-mode-bg);
+  background-color: var(--dark-mode-card-bg);
   border: 1px solid var(--dark-mode-border);
 }
 
@@ -623,7 +622,7 @@ body.dark-mode footer {
   }
 
   .hero {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
     padding-top: 100px;
     min-height: auto;
