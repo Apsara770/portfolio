@@ -630,6 +630,32 @@ body.dark-mode footer {
   }
 }
 
+/* Container for logo + toggles */
+.navbar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+/* Logo style */
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* Toggle buttons */
+.menu-toggle,
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  margin-left: 0.75rem;
+  cursor: pointer;
+}
+
 @media (max-width: 480px) {
   .hero-right h2 {
     font-size: 2rem;
