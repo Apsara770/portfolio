@@ -90,8 +90,7 @@
   </section>
 
   <!-- Scroll to Top Button -->
-<button id="scrollToTopBtn" title="Go to top">↑</button>
-
+  <button id="scrollToTopBtn" title="Go to top">↑</button>
 
   <!-- Footer -->
   <footer>
@@ -139,7 +138,6 @@
       localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
     });
 
-    // Load saved theme on page load
     window.addEventListener("DOMContentLoaded", () => {
       const savedTheme = localStorage.getItem("theme");
       if (savedTheme === "dark") {
@@ -148,21 +146,19 @@
       }
     });
 
-    // Scroll to Top Button
-const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    scrollToTopBtn.style.display = "block";
-  } else {
-    scrollToTopBtn.style.display = "none";
-  }
-});
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    });
 
-scrollToTopBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
+    scrollToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   </script>
 </body>
 </html>
