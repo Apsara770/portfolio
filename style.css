@@ -377,48 +377,96 @@ body.dark-mode .about {
   margin-top: -10px;
 }
 
-/* --- Skills Section --- */
+/* General Section Styling */
 #skills {
-  background-color: var(--bg-color);
-  padding: 80px 5%;
+  padding: 80px 5%; /* Adds vertical and horizontal padding */
+  background-color: #f4f7f6; /* A light background color */
+  font-family: 'Poppins', sans-serif;
+  color: #333;
 }
 
-body.dark-mode #skills {
-  background-color: var(--dark-mode-bg);
-}
-
-.skills-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
+/* Heading Styling */
+#skills h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
   text-align: center;
+  margin-bottom: 50px;
+  color: #333;
+  position: relative;
 }
 
-.skills-list span {
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
-  box-shadow: 0 2px 5px var(--shadow-color);
+/* Underline effect for the heading */
+#skills h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #007bff; /* Primary brand color */
+  border-radius: 2px;
 }
 
-.skills-list span:hover {
-  transform: translateY(-3px);
-  background-color: var(--btn-hover-color);
-  box-shadow: 0 4px 8px var(--shadow-color);
+/* List container styling */
+#skills ul {
+  list-style-type: none;
+  max-width: 800px;
+  margin: 0 auto; /* Centers the list */
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Spacing between list items */
 }
 
-body.dark-mode .skills-list span {
-  background-color: var(--dark-mode-highlight);
-  color: var(--dark-mode-bg);
+/* Individual list item styling */
+#skills li {
+  background-color: #ffffff; /* White background for each skill category */
+  border-left: 5px solid #007bff; /* Primary color highlight bar on the left */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Soft shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.1rem;
 }
 
-body.dark-mode .skills-list span:hover {
-  background-color: #4a8ac7;
+#skills li:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Strong tag (category title) styling */
+#skills li strong {
+  color: #007bff; /* Highlight color for the category title */
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+/* Dark Mode Support (Optional but recommended) */
+body.dark-mode #skills {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode #skills h2 {
+  color: #e0e0e0;
+}
+
+body.dark-mode #skills h2::after {
+  background-color: #64b5f6;
+}
+
+body.dark-mode #skills li {
+  background-color: #2d2d2d;
+  border-left-color: #64b5f6;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode #skills li:hover {
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode #skills li strong {
+  color: #64b5f6;
 }
 
 /* --- Projects Section --- */
