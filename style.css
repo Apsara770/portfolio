@@ -622,7 +622,7 @@ body.dark-mode footer {
   }
 
   .hero {
-    flex-direction: column-reverse;
+    flex-direction: column;
     text-align: center;
     padding-top: 100px;
     min-height: auto;
