@@ -3,26 +3,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 /* --- Variable Definitions for Theming --- */
+/* --- Modern Theme Update --- */
 :root {
-  /* Light Theme Colors */
-  --primary-color: #007bff;
-  --text-color: #333;
-  --bg-color: #f4f7f6;
-  --card-bg-color: #ffffff;
-  --highlight-color: #007bff;
-  --btn-hover-color: #0056b3;
-  --border-color: #e0e0e0;
-  --shadow-color: rgba(0, 0, 0, 0.1);
+  --primary-color: #d4af37; /* Gold highlight */
+  --text-color: #2d3436;
+  --bg-color: #ffffff;
+  --card-bg-color: #f9f9f9;
+  --highlight-color: #b8860b;
+  --btn-hover-color: #936a00;
+  --border-color: #dddddd;
   
-  /* Dark Theme Colors */
-  --dark-mode-bg: #1a1a1a;
-  --dark-mode-text: #e0e0e0;
-  --dark-mode-card-bg: #2d2d2d;
-  --dark-mode-highlight: #64b5f6;
-  --dark-mode-border: #444;
-  --dark-mode-shadow: rgba(255, 255, 255, 0.05);
+  /* Dark Mode - Now "Midnight & Gold" */
+  --dark-mode-bg: #0f172a;
+  --dark-mode-text: #f1f5f9;
+  --dark-mode-card-bg: #1e293b;
+  --dark-mode-highlight: #fbbf24;
+  --dark-mode-border: #334155;
 }
 
+/* --- Experience Card Styling --- */
+.experience-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.exp-card {
+  background-color: var(--card-bg-color);
+  padding: 30px;
+  border-radius: 15px;
+  border-left: 6px solid var(--primary-color);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+body.dark-mode .exp-card {
+  background-color: var(--dark-mode-card-bg);
+  border-left-color: var(--dark-mode-highlight);
+}
+
+.exp-card:hover {
+  transform: translateX(10px);
+}
+
+.exp-header h3 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.exp-company {
+  display: block;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.exp-date {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+/* Modernize Skills List */
+.skills-list {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px !important;
+  list-style: none;
+}
+
+.skills-list li {
+  padding: 15px !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--border-color);
+}
 /* --- Base & Global Styles --- */
 * {
   box-sizing: border-box;
