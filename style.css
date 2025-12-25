@@ -104,3 +104,10 @@ footer{background:#020617;color:white;text-align:center;padding:20px;}
 .nav-links.active{display:flex;}
 .nav-links a{color:white;}
 }
+/* ================= SOCIAL ICONS MOBILE CENTER ================= */
+@media (max-width: 768px) {
+  .social-icons {
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
