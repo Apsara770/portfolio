@@ -374,7 +374,7 @@ setInterval(() => {
   }, 2000); // 2 seconds delay
 });
 
- const projectContainer = document.querySelector(".project-container");
+const projectContainer = document.querySelector(".project-container");
 const projectCards = document.querySelectorAll(".project-card");
 const prevProject = document.querySelector(".project-slider .prev");
 const nextProject = document.querySelector(".project-slider .next");
@@ -382,9 +382,7 @@ const nextProject = document.querySelector(".project-slider .next");
 let projectIndex = 0;
 
 function showProject(index) {
-  projectCards.forEach((card, i) => {
-    card.classList.remove("active");
-  });
+  projectCards.forEach(card => card.classList.remove("active"));
   projectCards[index].classList.add("active");
   projectContainer.style.transform = `translateX(-${index * 100}%)`;
 }
@@ -409,7 +407,6 @@ setInterval(() => {
 
 // Initialize first card
 showProject(projectIndex);
-
 
   </script>
 </body>
