@@ -32,9 +32,18 @@
   <!-- Hero Section -->
 <section class="hero">
   <div class="hero-left">
-    <div class="profile-pic-container">
+    <!-- <div class="profile-pic-container">
       <img src="assets/images/my.jpg" alt="Profile" class="profile-img"/>
-    </div>
+    </div> -->
+    
+    <div class="profile-pic-container">
+  <!-- Google Avatar -->
+  <img src="https://lh3.googleusercontent.com/a-/AOh14Ggxyz1234567890" alt="Avatar" id="avatar-img" class="profile-img avatar" />
+  
+  <!-- Your real profile image -->
+  <img src="assets/images/my.jpg" alt="Profile" id="profile-img" class="profile-img real" />
+</div>
+
   </div>
   <div class="hero-right">
     <h2>Hey I'm <span class="highlight">Sandamini</span></h2>
@@ -354,6 +363,16 @@ setInterval(() => {
   index = (index + 1) % testimonialCards.length;
   showTestimonial(index);
 }, 5000);
+
+    window.addEventListener("DOMContentLoaded", () => {
+  const avatar = document.getElementById("avatar-img");
+  const profile = document.getElementById("profile-img");
+
+  setTimeout(() => {
+    avatar.style.opacity = 0;    // fade out avatar
+    profile.style.opacity = 1;   // fade in real profile
+  }, 2000); // 2 seconds delay
+});
 
   </script>
 </body>
