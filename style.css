@@ -254,7 +254,6 @@ body.dark-mode .about-container {
     font-size: 0.9rem;
   }
 }
-.btn{display:inline-block;margin:15px 0;padding:12px 26px;border-radius:30px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;text-decoration:none;box-shadow:0 12px 30px rgba(99,102,241,.4);}
 
 /* ================= CONTACT ================= */
 
@@ -281,7 +280,7 @@ body.dark-mode .contact-info{
 
 .contact-info p{
   margin:15px 0;
-  font-size:15px;
+  font-size:10px;
   align:left;
 }
 
