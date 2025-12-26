@@ -119,11 +119,44 @@ body.dark-mode .about-container {
 }
 
 /* ================= SKILLS ================= */
-.skills-list li{
-  margin:14px 0;padding:14px;border-left:4px solid var(--primary);
-  background:white;border-radius:10px;
+.skill-bars {
+  max-width: 600px;
+  margin: auto;
 }
-body.dark-mode .skills-list li{background:rgba(255,255,255,.05);}
+
+.skill {
+  margin-bottom: 18px;
+}
+
+.skill span {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.bar {
+  background: #ddd;
+  height: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg,#6366f1,#22c55e);
+  animation: grow 1.5s ease forwards;
+}
+
+/* Progress levels */
+.p90 {width: 90%;}
+.p85 {width: 85%;}
+.p80 {width: 80%;}
+
+@keyframes grow {
+  from {width: 0;}
+}
+
 
 /* ================= PROJECTS ================= */
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;}
