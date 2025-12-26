@@ -166,7 +166,7 @@ body.dark-mode .about-container {
 .btn{display:inline-block;margin:15px 0;padding:12px 26px;border-radius:30px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;text-decoration:none;box-shadow:0 12px 30px rgba(99,102,241,.4);}
 
 /* ================= CONTACT ================= */
-/* ================= CONTACT UPGRADE ================= */
+
 .contact-wrapper{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -224,6 +224,7 @@ body.dark-mode .contact-info{
 @media(max-width:768px){
   .contact-wrapper{grid-template-columns:1fr;}
   .contact-info{text-align:center;}
+  .contact-info p{ align:left;}
   .contact-social{justify-content:center;}
 }
 
