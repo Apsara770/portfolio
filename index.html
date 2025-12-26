@@ -320,6 +320,36 @@ toggleBtn.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
+const prevBtn = document.querySelector(".testimonials .prev");
+const nextBtn = document.querySelector(".testimonials .next");
+const testimonialContainer = document.querySelector(".testimonial-container");
+const testimonialCards = document.querySelectorAll(".testimonial-card");
+
+let index = 0;
+
+function showTestimonial(i) {
+  testimonialCards.forEach(card => card.classList.remove("active"));
+  testimonialCards[i].classList.add("active");
+  testimonialContainer.style.transform = `translateX(-${i * 100}%)`;
+}
+
+// Next button
+nextBtn.addEventListener("click", () => {
+  index = (index + 1) % testimonialCards.length;
+  showTestimonial(index);
+});
+
+// Prev button
+prevBtn.addEventListener("click", () => {
+  index = (index - 1 + testimonialCards.length) % testimonialCards.length;
+  showTestimonial(index);
+});
+
+// Auto slide every 5 seconds
+setInterval(() => {
+  index = (index + 1) % testimonialCards.length;
+  showTestimonial(index);
+}, 5000);
 
   </script>
 </body>
