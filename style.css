@@ -231,6 +231,42 @@ body.dark-mode .contact-info{
 .contact-form{max-width:500px;margin:auto;display:flex;flex-direction:column;gap:15px;}
 .contact-form input,.contact-form textarea{padding:14px;border-radius:12px;border:none;}
 
+.testimonials {
+  background: #f8f9ff;
+}
+
+.testimonial-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: .3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(99,102,241,0.35);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.testimonial-card h4 {
+  color: #6366f1;
+}
+
+
 /* ================= FOOTER ================= */
 footer{background:#020617;color:white;text-align:center;padding:20px;}
 
