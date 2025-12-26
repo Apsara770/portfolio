@@ -374,6 +374,37 @@ setInterval(() => {
   }, 2000); // 2 seconds delay
 });
 
+    const projectContainer = document.querySelector(".project-container");
+const projectCards = document.querySelectorAll(".project-card");
+const prevProject = document.querySelector(".project-slider .prev");
+const nextProject = document.querySelector(".project-slider .next");
+
+let projectIndex = 0;
+
+function showProject(index) {
+  projectCards.forEach(card => card.classList.remove("active"));
+  projectCards[index].classList.add("active");
+  projectContainer.style.transform = `translateX(-${index * 100}%)`;
+}
+
+// Next button
+nextProject.addEventListener("click", () => {
+  projectIndex = (projectIndex + 1) % projectCards.length;
+  showProject(projectIndex);
+});
+
+// Prev button
+prevProject.addEventListener("click", () => {
+  projectIndex = (projectIndex - 1 + projectCards.length) % projectCards.length;
+  showProject(projectIndex);
+});
+
+// Auto-slide every 5 seconds
+setInterval(() => {
+  projectIndex = (projectIndex + 1) % projectCards.length;
+  showProject(projectIndex);
+}, 5000);
+
   </script>
 </body>
 </html>
