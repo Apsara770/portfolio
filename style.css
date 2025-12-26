@@ -269,46 +269,6 @@ body.dark-mode .about-container {
 
 .project-slider .prev { left: 10px; }
 .project-slider .next { right: 10px; }
-/* Base button */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 26px;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-/* Project GitHub Button */
-.secondary-btn {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: white;
-  box-shadow: 0 8px 20px rgba(99,102,241,0.4);
-}
-
-/* Hover Effect */
-.secondary-btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 15px 30px rgba(139,92,246,0.5);
-}
-
-/* GitHub Icon */
-.secondary-btn i {
-  font-size: 1.1rem;
-}
-
-/* Mobile Fix */
-@media (max-width: 768px) {
-  .secondary-btn {
-    padding: 10px 20px;
-    font-size: 0.85rem;
-  }
-}
 
 /* ============ Mobile Fix ============ */
 @media (max-width: 768px) {
