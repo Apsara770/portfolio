@@ -291,6 +291,10 @@
   const phone = "94766327039";
 
   window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
+      // ✅ Clear the form after opening WhatsApp
+  nameInput.value = "";
+  emailInput.value = "";
+  msgInput.value = "";
 });
 
     
