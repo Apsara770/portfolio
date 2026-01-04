@@ -330,9 +330,27 @@ scrollToTopBtn.addEventListener("click", () => {
     const toggleBtn = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('nav-links');
 
-toggleBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+const menuIcon = document.getElementById("menu-icon");
+
+toggleBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+
+  // Change icon ☰ ↔ ✖
+  if (navLinks.classList.contains("active")) {
+    menuIcon.textContent = "✖";
+  } else {
+    menuIcon.textContent = "☰";
+  }
 });
+
+/* Auto close when clicking menu links */
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuIcon.textContent = "☰";
+  });
+});
+
 
 const prevBtn = document.querySelector(".testimonials .prev");
 const nextBtn = document.querySelector(".testimonials .next");
