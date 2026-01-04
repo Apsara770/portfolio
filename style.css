@@ -54,6 +54,16 @@ body.dark-mode .nav-links a{color:white;}
     margin: 20px 0;
   }
 
+  /* Hide hamburger on desktop */
+.menu-toggle {
+  display: none;
+}
+  /* Show only on mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
   .menu-toggle {
     display: block;
     font-size: 32px;
