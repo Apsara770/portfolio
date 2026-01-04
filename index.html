@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="assets/images/global-icon.png" type="image/jpg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  
 </head>
 <body>
   <!-- Navigation -->
@@ -244,13 +244,16 @@
       </div> -->
     </div>
     
-    <form id="contact-form" class="contact-form">
-       <p class="contact-intro">Have a question or a project in mind? Feel free to reach out!</p>
-      <input type="text" name="from_name" placeholder="Your Name" required />
-      <input type="email" name="from_email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn secondary-btn">Send Message</button>
-    </form>
+<form id="contact-form" class="contact-form">
+  <p class="contact-intro">Have a question or a project in mind? Feel free to reach out!</p>
+  <input type="text" id="wa-name" placeholder="Your Name" required />
+  <input type="email" id="wa-email" placeholder="Your Email" required />
+  <textarea id="wa-message" placeholder="Your Message" required></textarea>
+  <button type="submit" class="btn secondary-btn whatsapp-btn">
+    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+  </button>
+</form>
+
         </div>
     <p id="form-message"></p>
   </section>
@@ -270,36 +273,22 @@
   </footer>
 
   <script>
-    // Initialize EmailJS
-    (function () {
-      emailjs.init("qI8QutFmaJq4FBIPk");
-    })();
+    // for whatsapp
+    
+  document.getElementById("contact-form").addEventListener("submit", function(e){
+  e.preventDefault();
 
-    const form = document.getElementById("contact-form");
-    const statusEl = document.getElementById("form-message");
+  const name = document.getElementById("wa-name").value;
+  const email = document.getElementById("wa-email").value;
+  const msg = document.getElementById("wa-message").value;
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+  const text = `Hi, I'm ${name}. My email is ${email}.%0A%0AMessage: ${msg}`;
+  const phone = "94766327039";
 
-      statusEl.textContent = "📤 Sending your message...";
-      statusEl.style.color = "#007bff";
+  window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
+});
 
-      emailjs.sendForm("service_v0foyoc", "template_iu01qf6", this)
-        .then(function () {
-          statusEl.textContent = "✅ Message sent successfully!";
-          statusEl.style.color = "green";
-          form.reset();
-        }, function (error) {
-          console.error("Email send error:", error);
-          statusEl.textContent = "❌ Failed to send message. Please try again.";
-          statusEl.style.color = "red";
-        });
-
-      setTimeout(() => {
-        statusEl.textContent = "";
-      }, 5000);
-    });
-
+    
     // Theme Toggle
     const themeToggle = document.getElementById("theme-toggle");
     themeToggle.addEventListener("click", () => {
